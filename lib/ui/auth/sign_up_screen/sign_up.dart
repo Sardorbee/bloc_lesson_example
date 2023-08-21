@@ -1,5 +1,4 @@
 import 'package:bloc_lesson_example/data/bloc/cubits/firebase_sign_cubit/firebase_sign_in_cubit.dart';
-import 'package:bloc_lesson_example/ui/app_level/app.dart';
 import 'package:bloc_lesson_example/ui/auth/sign_in_screen/sign_in.dart';
 import 'package:bloc_lesson_example/ui/utils/loading_page.dart';
 import 'package:flutter/material.dart';

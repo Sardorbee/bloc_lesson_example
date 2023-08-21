@@ -40,7 +40,7 @@ class _SignInPageState extends State<SignInPage> {
                       Column(
                         children: [
                           Padding(
-                            padding: EdgeInsets.all(w * 0.18),
+                            padding: EdgeInsets.all(w * 0.17),
                             child: Row(
                               children: [
                                 const Text("Don't have an account yet? "),
@@ -72,7 +72,7 @@ class _SignInPageState extends State<SignInPage> {
               ],
             ),
           ),
-         BlocBuilder<FirebaseSignInCubit, FirebaseSignInState>(
+          BlocBuilder<FirebaseSignInCubit, FirebaseSignInState>(
             builder: (context, state) {
               return Visibility(
                   visible: state is FirebaseSignInLoading,
@@ -85,8 +85,8 @@ class _SignInPageState extends State<SignInPage> {
   }
 
   Stack stackmethod(BuildContext context) {
-    TextEditingController emailController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
+    final emailcontroller = context.read<FirebaseSignInCubit>().emailController;
+    final passwordcontroller = context.read<FirebaseSignInCubit>().passwordController;
     var w = MediaQuery.of(context).size.width;
     FirebaseSignInCubit x = context.watch<FirebaseSignInCubit>();
     var h = MediaQuery.of(context).size.height;
@@ -125,7 +125,7 @@ class _SignInPageState extends State<SignInPage> {
               child: Column(
                 children: [
                   TextFormField(
-                    controller: emailController,
+                    controller: emailcontroller,
                     decoration: const InputDecoration(
                       suffixIcon: Icon(Icons.check_circle_rounded),
                       labelText: 'Email',
@@ -136,7 +136,7 @@ class _SignInPageState extends State<SignInPage> {
                     height: h * 0.01,
                   ),
                   TextFormField(
-                    controller: passwordController,
+                    controller: passwordcontroller,
                     decoration: InputDecoration(
                       labelText: ('Password'),
                       labelStyle: const TextStyle(fontWeight: FontWeight.bold),
@@ -188,11 +188,11 @@ class _SignInPageState extends State<SignInPage> {
                         ),
                       ),
                       onPressed: (() {
-                        if (passwordController.text.isNotEmpty &&
-                            emailController.text.isNotEmpty) {
+                        if (passwordcontroller.text.isNotEmpty &&
+                            emailcontroller.text.isNotEmpty) {
                           x.signInUser(context,
-                              email: emailController.text,
-                              password: passwordController.text);
+                              email: emailcontroller.text,
+                              password: passwordcontroller.text);
                         } else {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(

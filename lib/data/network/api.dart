@@ -15,7 +15,6 @@ class ApiService {
         throw Exception('Request failed with status: ${response.statusCode}');
       }
     } catch (error) {
-      print('Error: $error');
       throw Exception(error.toString());
     }
   }

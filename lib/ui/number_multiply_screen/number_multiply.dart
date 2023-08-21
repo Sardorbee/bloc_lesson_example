@@ -1,6 +1,6 @@
 import 'package:bloc_lesson_example/data/bloc/cubits/api_example_cubit/api_example_cubit.dart';
-import 'package:bloc_lesson_example/data/bloc/cubits/button_Color_cubit/button_color_cubit.dart';
-import 'package:bloc_lesson_example/data/bloc/cubits/button_Color_cubit/button_color_state.dart';
+import 'package:bloc_lesson_example/data/bloc/cubits/button_color_cubit/button_color_cubit.dart';
+import 'package:bloc_lesson_example/data/bloc/cubits/button_color_cubit/button_color_state.dart';
 import 'package:bloc_lesson_example/data/bloc/cubits/number_multiplier_cubit/nuber_multiplayer_cubit.dart';
 import 'package:bloc_lesson_example/data/bloc/cubits/number_multiplier_cubit/nuber_multiplayer_state.dart';
 import 'package:bloc_lesson_example/data/network/random_user_model.dart';
@@ -104,7 +104,7 @@ class _NumberScreenState extends State<NumberScreen> {
                   BlocBuilder<ApiExampleCubit, ApiExampleState>(
                     builder: (context, state) {
                       if (state is ApiExampleInitial) {
-                        return Text('No data yet.');
+                        return const Text('No data yet.');
                       } else if (state is ApiExampleLoaded) {
                         RandomModel randomModel = state.usersData;
                         Result result = randomModel.results.first;
@@ -114,7 +114,8 @@ class _NumberScreenState extends State<NumberScreen> {
                               Center(
                                 child: CircleAvatar(
                                   maxRadius: 70,
-                                  backgroundImage: NetworkImage(result.picture.large),
+                                  backgroundImage:
+                                      NetworkImage(result.picture.large),
                                 ),
                               ),
                               Row(
@@ -134,12 +135,15 @@ class _NumberScreenState extends State<NumberScreen> {
                                     width: 5,
                                   ),
                                   Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Text("city: ${result.location.city}"),
-                                      Text("country:  ${result.location.country}"),
-                                      Text("postcode: ${result.location.postcode}"),
+                                      Text(
+                                          "country:  ${result.location.country}"),
+                                      Text(
+                                          "postcode: ${result.location.postcode}"),
                                       Text("state: ${result.location.state}"),
                                       Text(
                                           "street name:${result.location.street.name}"),
@@ -198,7 +202,7 @@ class _NumberScreenState extends State<NumberScreen> {
                           ),
                         );
                       }
-                      return SizedBox();
+                      return const SizedBox();
                     },
                   ),
                 ],

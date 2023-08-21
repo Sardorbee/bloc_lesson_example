@@ -8,7 +8,8 @@ part 'firebase_sign_in_state.dart';
 
 class FirebaseSignInCubit extends Cubit<FirebaseSignInState> {
   FirebaseSignInCubit() : super(FirebaseUnAuthorized());
-
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   Future<void> signUpUser(
     BuildContext context, {
     String email = '',

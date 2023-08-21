@@ -1,4 +1,4 @@
-import 'package:bloc_lesson_example/data/bloc/cubits/navdar_cubit/navbar_cubit_cubit.dart';
+import 'package:bloc_lesson_example/data/bloc/cubits/navbar_cubit/navbar_cubit_cubit.dart';
 import 'package:bloc_lesson_example/ui/number_multiply_screen/number_multiply.dart';
 import 'package:bloc_lesson_example/ui/profile_screen/profile_screen.dart';
 import 'package:flutter/material.dart';

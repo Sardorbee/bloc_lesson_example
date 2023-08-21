@@ -2,7 +2,6 @@ import 'package:bloc_lesson_example/data/bloc/cubits/firebase_sign_cubit/ui_util
 import 'package:bloc_lesson_example/data/firebase/universal.dart';
 import 'package:bloc_lesson_example/ui/app_level/app.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AuthService {
@@ -36,7 +35,6 @@ class AuthService {
     } catch (error) {
       if (context.mounted) {
         showConfirmMessage(message: error.toString(), context: context);
-        print(error.toString());
       }
       return UniversalData(error: error.toString());
     }

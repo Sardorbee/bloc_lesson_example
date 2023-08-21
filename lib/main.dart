@@ -1,8 +1,8 @@
 import 'package:bloc_lesson_example/data/bloc/cubits/api_example_cubit/api_example_cubit.dart';
-import 'package:bloc_lesson_example/data/bloc/cubits/button_Color_cubit/button_color_cubit.dart';
+import 'package:bloc_lesson_example/data/bloc/cubits/button_color_cubit/button_color_cubit.dart';
 import 'package:bloc_lesson_example/data/bloc/cubits/firebase_sign_cubit/firebase_sign_in_cubit.dart';
 import 'package:bloc_lesson_example/data/bloc/cubits/firebase_sign_cubit/listen_user_cubit.dart';
-import 'package:bloc_lesson_example/data/bloc/cubits/navdar_cubit/navbar_cubit_cubit.dart';
+import 'package:bloc_lesson_example/data/bloc/cubits/navbar_cubit/navbar_cubit_cubit.dart';
 import 'package:bloc_lesson_example/data/bloc/cubits/number_multiplier_cubit/nuber_multiplayer_cubit.dart';
 import 'package:bloc_lesson_example/ui/app_level/app.dart';
 
@@ -43,6 +43,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
